@@ -1,16 +1,18 @@
 <div class="search-input">
   <input type="text" placeholder="Search ..." [(ngModel)]="text" (keyup)="applyFilter($event.target.value)">
-  <input type="submit" value="GO">
-  <ng-container *ngIf="searchdata?.length;else elseBloc;">
-    <ng-container *ngFor=" let item of searchdata">
-      <div class="item" (click)="selectData(item)">
-        {{item?.country_name + ', '+ item?.city}}
-      </div>
+  <input type="submit" value="GO" (click)="submit()">
+  <div>
+    <ng-container *ngIf="searchdata?.length;else elseBloc;">
+      <ng-container *ngFor=" let item of searchdata">
+        <div class="item" (click)="selectData(item)">
+          {{item?.country_name + ', '+ item?.city}}
+        </div>
+      </ng-container>
     </ng-container>
-  </ng-container>
-  <ng-template #elseBloc>
-    <div class="item" *ngIf="text">
-      {{message}}
-    </div>
-  </ng-template>
+    <ng-template #elseBloc>
+      <div class="item" *ngIf="text">
+        {{message}}
+      </div>
+    </ng-template>
+  </div>
 </div>

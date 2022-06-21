@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs/internal/Observable';
-import { TopFiveDestinationsResponse } from 'src/app/models/responses/v2/destination.responses';
+import { getDestinationsByIdResponse, TopFiveDestinationsResponse } from 'src/app/models/responses/v2/destination.responses';
+import { Destination } from 'src/app/models/interfaces/destination.interfaces';
 
 export interface QueryParams {
   [key: string]: string | number;
@@ -15,7 +16,7 @@ export class DestinationsService {
 
   constructor(private http: HttpClient) { }
   version: string = "2.0/"
-  route: string = "top_five/destinations"
+  route: string = "top_five/"
 
   /**
  * e.g :
@@ -53,7 +54,12 @@ export class DestinationsService {
    */
   getTopFiveDestinations(queryParams: QueryParams = {}): Observable<TopFiveDestinationsResponse> {
     const correctFormatForQueryUrl = this.correctFormatForQueryUrl({ search_type: "city_or_country", ...queryParams });
-    const url = `${environment.apiUrl}${this.version}${this.route}${correctFormatForQueryUrl}`
+    const url = `${environment.apiUrl}${this.version}${this.route}destinations${correctFormatForQueryUrl}`
     return this.http.get<TopFiveDestinationsResponse>(url);
+  }
+
+  getDestinationsById(id: string): Observable<getDestinationsByIdResponse> {
+    const url = `${environment.apiUrl}${this.version}${this.route}destination?id=${id}`
+    return this.http.get<getDestinationsByIdResponse>(url);
   }
 }

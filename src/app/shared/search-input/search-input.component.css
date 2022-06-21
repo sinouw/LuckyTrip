@@ -26,6 +26,7 @@ input[type="submit"] {
     background: linear-gradient(116.56505117707799deg, rgba(255, 97, 97, 1) 0%, rgba(255, 97, 163, 1) 100%);
     cursor: pointer;
 }
+
 input[type="submit"]:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
@@ -47,10 +48,14 @@ input[type="submit"]:hover {
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
 
+.search-input {
+    text-align: -webkit-center;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
 
-    input[type=text]{
+    input[type=text] {
         width: auto;
     }
 }
