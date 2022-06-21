@@ -10,7 +10,7 @@
     border: 1px solid #eee;
     background-color: #A3A9C5;
     height: 200px;
-    width: 350px;
+    width: 400px;
     margin: 0 8px 16px;
     padding: 16px 0px;
     display: flex;
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-    }
+}
 
 .card-container .card:not(:last-child) {
     margin-right: 0;

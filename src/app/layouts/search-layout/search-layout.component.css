@@ -8,16 +8,13 @@ h2 {
 
 .content {
     display: flex;
-    padding: 0 16px;
     flex-direction: column;
-    text-align: center;
 }
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
+    justify-content: space-between;
 }
 
 /* Responsive Styles */
@@ -27,4 +24,8 @@ h2 {
     .terminal {
         width: 100%;
     }
+}
+.container-main{
+    width: 90%;
+    margin: 0 auto;
 }
