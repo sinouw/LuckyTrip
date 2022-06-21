@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs/internal/Observable';
 import { TopFiveDestinationsResponse } from 'src/app/models/responses/v2/destination.responses';
 
-interface QueryParams {
+export interface QueryParams {
   [key: string]: string | number;
 }
 
@@ -52,7 +52,7 @@ export class DestinationsService {
    * @returns An Observable of type TopFiveDestinationsResponse
    */
   getTopFiveDestinations(queryParams: QueryParams = {}): Observable<TopFiveDestinationsResponse> {
-    const correctFormatForQueryUrl = this.correctFormatForQueryUrl(queryParams);
+    const correctFormatForQueryUrl = this.correctFormatForQueryUrl({ search_type: "city_or_country", ...queryParams });
     const url = `${environment.apiUrl}${this.version}${this.route}${correctFormatForQueryUrl}`
     return this.http.get<TopFiveDestinationsResponse>(url);
   }

@@ -1,4 +1,16 @@
 <div class="search-input">
-    <input type="text" placeholder="Search ...">
-    <input type="submit" value="GO">
-  </div>
+  <input type="text" placeholder="Search ..." (keyup)="applyFilter($event.target.value)">
+  <input type="submit" value="GO">
+  <ng-container *ngIf="searchdata?.length;else elseBloc;">
+    <ng-container *ngFor=" let item of searchdata">
+      <div>
+        {{item?.country_name + ', '+ item?.city}}
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-template #elseBloc>
+    <div *ngIf="text">
+      {{message}}
+    </div>
+  </ng-template>
+</div>
