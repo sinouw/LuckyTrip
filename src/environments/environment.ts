@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://devapi.luckytrip.co.uk/api/2.0/"
+  apiUrl: "https://devapi.luckytrip.co.uk/api/"
 };
 
 /*
