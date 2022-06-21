@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-const routes: Routes = [];
+//Lazy loaded components
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'search' },
+  { path: 'search', loadChildren: () => import('./search-layout/search-layout.module').then(m => m.SearchLayoutModule) },
+  { path: 'result', loadChildren: () => import('./search-layout/search-layout.module').then(m => m.SearchLayoutModule) },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
