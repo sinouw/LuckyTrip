@@ -1,6 +1,17 @@
+h2 {
+    font-size: 32px;
+}
+
+h2.blog {
+    color: #7BFBFF;
+}
+
 h2.desc {
     color: #FFED7B;
-    font-size: 32px;
+}
+
+h2.find {
+    color: #FF7B99;
 }
 
 p.desc {
@@ -10,11 +21,6 @@ p.desc {
     font-style: normal;
     letter-spacing: 0px;
     text-align: left;
-}
-
-h2.blog {
-    color: #7BFBFF;
-    font-size: 32px;
 }
 
 .spacer {
@@ -41,7 +47,7 @@ h2.blog {
     }
 
     .search-nav {
-        display: block!important;
+        display: block !important;
     }
 }
 
@@ -91,6 +97,64 @@ h2.blog {
     align-items: center;
     justify-content: flex-start;
 }
-.banner-container {
+
+.container {
     text-align: -webkit-center;
+    text-align-last: center;
+}
+
+#breathing-button {
+    -webkit-animation: breathing 5s ease-out infinite normal;
+    animation: breathing 5s ease-out infinite normal;
+    -webkit-font-smoothing: antialiased;
+    border-radius: 2px;
+}
+
+
+@-webkit-keyframes breathing {
+    0% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    60% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes breathing {
+    0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    25% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    60% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
 }
