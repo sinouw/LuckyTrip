@@ -6,11 +6,11 @@
 }
 
 .card {
-    border-radius: 4px;
+    border-radius: 10px;
     border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 40px;
-    width: 200px;
+    background-color: #A3A9C5;
+    height: 200px;
+    width: 350px;
     margin: 0 8px 16px;
     padding: 16px 0px;
     display: flex;
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-}
+    }
 
 .card-container .card:not(:last-child) {
     margin-right: 0;

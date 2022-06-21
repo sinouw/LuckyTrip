@@ -1,0 +1,26 @@
+input[type=text] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 900;
+    background-color: rgb(177, 174, 174);
+    background-image: url('../../../assets/icons/search-icon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 15px 40px;
+}
+
+input[type="submit"] {
+    color: white;
+    font-weight: 900;
+    margin-left: -80px;
+    height: 37px;
+    width: 70px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px rgba(255, 97, 97, 1);
+    opacity: 1;
+    border: 1px solid rgba(255, 97, 97, 1);
+    background: linear-gradient(116.56505117707799deg, rgba(255, 97, 97, 1) 0%, rgba(255, 97, 163, 1) 100%);
+    cursor: pointer;
+}
