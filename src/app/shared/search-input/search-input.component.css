@@ -10,6 +10,7 @@ input[type=text] {
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 15px 40px;
+    width: 350px;
 }
 
 input[type="submit"] {
@@ -24,4 +25,32 @@ input[type="submit"] {
     border: 1px solid rgba(255, 97, 97, 1);
     background: linear-gradient(116.56505117707799deg, rgba(255, 97, 97, 1) 0%, rgba(255, 97, 163, 1) 100%);
     cursor: pointer;
+}
+input[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.item {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: white;
+    width: 250px;
+    border-radius: 40px;
+    background-color: rgb(177, 174, 174);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+
+    input[type=text]{
+        width: auto;
+    }
 }

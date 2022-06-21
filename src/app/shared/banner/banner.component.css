@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.banner-container {
+    text-align: -webkit-center;
+}
+
 .title {
     font-size: 40px;
     font-weight: 900;

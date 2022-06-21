@@ -4,7 +4,7 @@ import { ResultLayoutComponent } from './result-layout.component';
 
 
 const routes: Routes = [
-  { path: '', component: ResultLayoutComponent },
+  { path: ':id', component: ResultLayoutComponent },
 ];
 
 @NgModule({

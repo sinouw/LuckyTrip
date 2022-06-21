@@ -18,9 +18,10 @@ export class SearchInputComponent implements OnInit {
     this.debounceFilter()
   }
   searchdata: Destination[] = [];
+  selectedData: Destination
   text: string = "";
   searchSub$ = new Subject<string>();
-  message: string = "Searching..."
+  message: string = "Searching...";
   applyFilter(filterValue: string) {
     this.text = filterValue;
     this.searchSub$.next(this.text.trim().toLowerCase())
@@ -39,7 +40,7 @@ export class SearchInputComponent implements OnInit {
   getTopFiveDestinations(queryParams: QueryParams) {
     this.destinationsService.getTopFiveDestinations(queryParams)
       .subscribe((result: TopFiveDestinationsResponse) => {
-        if (result) {
+        if (result?.destinations?.length) {
           this.searchdata = result.destinations.slice(0, 10)
           console.log("searchdata :", this.searchdata);
         } else {
@@ -47,5 +48,11 @@ export class SearchInputComponent implements OnInit {
           this.message = "No data found."
         }
       });
+  }
+
+  selectData(item: Destination) {
+    this.selectedData = item;
+    this.text = item?.country_name + ', ' + item?.city
+    console.log("this.selectedData :", this.selectedData);
   }
 }
